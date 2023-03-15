@@ -1,0 +1,26 @@
+.quicklinks {
+  width: 265px;
+  height: 362px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.mainName {
+  color: #076f32;
+}
+
+.icon {
+  width: 47px;
+  height: 47px;
+  color: #076f32;
+  margin: 10px 0 0 9px;
+}
+
+.links {
+  color: #007bff;
+  font-size: 14px;
+  margin: 19.07px 38px 23px 17px;
+}

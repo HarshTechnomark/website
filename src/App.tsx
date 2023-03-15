@@ -1,23 +1,20 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './App.css';
+import AccountSummary from './components/AccountSummary/AccountSummary';
+import AvailableBalance from './components/AvailableBalance/AvailableBalance';
+import Manager from './components/Manager/Manager';
+import Navbar from './components/Navbar/Navbar';
+import QuickLinks from './components/QuickLinks/QuickLinks';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          harsh
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      {/* <Navbar /> */}
+      {/* <AvailableBalance /> */}
+      {/* <AccountSummary /> */}
+      {/* <QuickLinks /> */}
+      <Manager />
+    </Fragment>
   );
 }
 
