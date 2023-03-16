@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../../uiComponents/Card/Card";
+import Card from "../../../uiComponents/Card/Card";
 import classes from "./AvailableBalance.module.css";
 
 type Props = {};

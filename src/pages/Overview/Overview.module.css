@@ -1,0 +1,71 @@
+.layout1 {
+  width: 30%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 20%;
+  grid-template-rows: 2fr 5fr;
+  grid-template-areas:
+    "column1"
+    "column2";
+}
+.column1 {
+  grid-area: content1;
+  background-color: rgb(9, 91, 64);
+}
+.column2 {
+  grid-area: content1;
+  background-color: rgb(9, 91, 64);
+}
+
+.layout2 {
+  width: 40%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 40%;
+  grid-template-rows: 2fr 3fr 3fr;
+  grid-template-areas:
+    "column3"
+    "column4"
+    "column5";
+}
+.column3 {
+  grid-area: content3;
+  background-color: rgb(9, 91, 64);
+}
+.column4 {
+  grid-area: content4;
+  background-color: rgb(9, 91, 64);
+}
+.column5 {
+  grid-area: content5;
+  background-color: rgb(9, 91, 64);
+}
+
+.layout3 {
+  width: 40%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 40%;
+  grid-template-rows: 2fr 3fr 3fr;
+  grid-template-areas:
+    "column6"
+    "column7"
+    "column8"
+    "column9";
+}
+.column6 {
+  grid-area: content6;
+  background-color: rgb(9, 91, 64);
+}
+.column7 {
+  grid-area: content7;
+  background-color: rgb(9, 91, 64);
+}
+.column8 {
+  grid-area: content8;
+  background-color: rgb(9, 91, 64);
+}
+.column9 {
+  grid-area: content9;
+  background-color: rgb(9, 91, 64);
+}

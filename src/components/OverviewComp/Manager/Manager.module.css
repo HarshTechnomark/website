@@ -1,5 +1,5 @@
 .manager {
-  width: 265px;
+  width: 230px;
   height: 141px;
   font-family: "Roboto";
   font-style: normal;
@@ -10,6 +10,7 @@
 
 .mainName {
   color: #076f32;
+  font-size: 14px;
 }
 
 .icon {
@@ -19,12 +20,17 @@
   margin: 5px 2px 5px 10px;
 }
 
-.managerData{
-    width: 206px;
-    height: 30px;
+.managerData {
+  width: 206px;
+  height: 30px;
 }
 
 .managerData > p {
-    font-size: 14px;
-    font-weight: 400;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 5px 2px 5px 18px;
+}
+
+.managerData > p:last-child {
+  color: #007bff;
 }

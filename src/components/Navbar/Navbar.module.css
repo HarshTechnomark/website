@@ -1,11 +1,16 @@
+.mainContent{
+  display: flex;
+  flex-direction: row;
+  margin-top: 46px;
+  margin-left: 48px;
+}
+
 .nav {
   width: 312px;
   height: 1088px;
   color: #fff;
   background: linear-gradient(180deg, #076f32 0%, #054820 35.29%, #000000 100%);
   border-radius: 15px;
-  margin-top: 46px;
-  margin-left: 48px;
 }
 
 .logo {
@@ -16,14 +21,14 @@
 .user {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-around; */
+  justify-content: space-around;
 }
 
 .user > img {
   width: 61.23px;
   height: 65px;
   border-radius: 200px;
-  margin: 39px 13.77px 61px 40px;
+  margin: 5px 13.77px 61px 40px;
 }
 
 .user > .username {
@@ -32,32 +37,33 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
-  margin: 49px 0 61px 0;
+  margin: 5px 0 61px 0;
 }
 
 .user > .icon {
   width: 40.5px;
   height: 33.75;
-  margin: 49.13px 25.75px 89.08px 50.75px;
+  margin: 12px 25.75px 89.08px 50.75px;
 }
 
-.nav > ul {
-  list-style-type: none;
+.inactive {
+  height: 37px;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 17.5px 1px 17.5px 27px;
+  padding-left: 10px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
+  color: #fff;
 }
-
-.nav > ul > li {
-  height: 37px;
-  width: 240px;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: space-around; */
-  margin: 17.5px 1px 17.5px 1px;
-  padding-left: 10px;
+.inactive:hover{
+  color: #fff;
+  text-decoration: none;
 }
 
 .active {
@@ -70,5 +76,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 7px 1px 7px 1px;
+  margin: 17.5px 1px 17.5px 25px;
+  padding-left: 15px;
+}
+.active:hover{
+  color: #054820;
+  text-decoration: none;
 }

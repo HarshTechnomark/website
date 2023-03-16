@@ -1,0 +1,82 @@
+.accountSummary {
+  width: 320px;
+  height: 510px;
+  display: flex;
+  padding: 10.86px 18px 8px 15px;
+}
+
+.icon {
+  width: 31.59px;
+  height: 27.86;
+  color: #076f32;
+  margin-right: 5px;
+}
+
+.fdiv,
+.accountdiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.fdiv > span {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #076f32;
+}
+
+.accountdiv {
+  margin: 20px 5px;
+  font-size: 14px;
+}
+
+.accountdiv > span {
+  margin: 7px 0;
+}
+
+.select {
+  margin: 2%;
+}
+
+.accountSummary > span {
+  margin: 0 auto 15px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.tdiv {
+  display: flex;
+  flex-direction: row;
+}
+.tdiv > ul {
+  list-style-type: none;
+  margin-left: -10%;
+  margin-right: 12%;
+  margin-bottom: -7%;
+  font-size: 18px;
+}
+
+.first {
+  text-align: left;
+}
+
+.first > li {
+  color: #737272;
+  margin: 12% -25%;
+}
+
+.second {
+  text-align: right;
+}
+
+.second > li {
+  color: #737272;
+  margin: 18% -10%;
+}

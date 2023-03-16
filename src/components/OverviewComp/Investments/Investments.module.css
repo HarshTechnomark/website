@@ -1,0 +1,41 @@
+.investment {
+  width: 230px;
+  height: 295px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.mainName {
+  color: #076f32;
+}
+
+.icon {
+  width: 47px;
+  height: 47px;
+  color: #076f32;
+  margin: 14px 0px 16px 14px;
+}
+
+.investmentData {
+  width: 206px;
+  height: 30px;
+  margin: 18px 32px 7px 29px;
+}
+
+.investmentData > p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px 2px 5px 0px;
+}
+
+.investmentData > p:nth-child(1), p:nth-child(3) {
+  color: #007bff;
+}
+
+.more {
+  color: #f30066;
+  margin: 120px 16px 0px 150px;
+}

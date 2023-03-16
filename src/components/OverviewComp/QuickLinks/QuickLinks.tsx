@@ -1,7 +1,7 @@
 import React from "react";
-import Card from "../../uiComponents/Card/Card";
+import Card from "../../../uiComponents/Card/Card";
 import classes from "./QuickLinks.module.css";
-import Quicklink from "../../assets/quicklink.png";
+import Quicklink from "../../../assets/quicklink.png";
 
 type Props = {};
 
@@ -21,6 +21,7 @@ const QuickLinks = (props: Props) => {
         <p>Apply Home Loan</p>
         <p>Play Your Bills</p>
       </div>
+      <p className={classes.more}>more</p>
     </Card>
   );
 };
