@@ -1,0 +1,36 @@
+.manager {
+  width: 230px;
+  height: 141px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.mainName {
+  color: #076f32;
+  font-size: 14px;
+}
+
+.icon {
+  width: 47px;
+  height: 47px;
+  color: #076f32;
+  margin: 5px 2px 5px 10px;
+}
+
+.managerData {
+  width: 206px;
+  height: 30px;
+}
+
+.managerData > p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 5px 2px 5px 18px;
+}
+
+.managerData > p:last-child {
+  color: #007bff;
+}

@@ -1,0 +1,103 @@
+.quicktransfer {
+  width: 300px;
+  height: 845px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.mainName,
+.left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.icon {
+  width: 47px;
+  height: 47px;
+  color: #076f32;
+  margin: 15.05px 10px 52.88px 14.68px;
+}
+
+.left > span {
+  color: #076f32;
+  margin: 30.05px 10px 18.47px 0;
+}
+
+.more {
+  color: #f30066;
+  margin: 30px 10px 14px 10px;
+  cursor: pointer;
+}
+
+.amount {
+  width: 275px;
+  height: 44px;
+  color: #fff;
+  background: #737272;
+  border-radius: 10px;
+  padding: 10px 10px 10px 20px;
+  margin: 25px 10px 48px 10px;
+}
+
+.label {
+  margin: 0px 200px 10px 23px;
+  font-size: 14px;
+}
+
+.remarks {
+  background: #f0f2ff;
+  border: 1px solid #a9b1bc;
+  border-radius: 10px;
+  margin: 0px 18px 21px 22px;
+  padding: 2% 4%;
+}
+
+.btn{
+    margin: 0 18px 18px 20px;
+}
+
+.fields{
+    color: #f30066;
+    margin: 0px 50px 100px 23px;
+    font-size: 12px;
+}
+
+.recent{
+    display: flex;
+    flex-direction: row;
+    color: #076f32;
+}
+
+.recent > .icon{
+    width: 47px;
+    height: 47px;
+    color: #076f32;
+    margin: 0 5px 32px 20px;
+}
+
+.recent > span{
+    color: #076f32;
+    margin: 15px 50px 39px 0;
+}
+
+.coresol{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 px 150px 5px;
+    font-size: 12px;
+}
+
+.item > .icon{
+    margin-bottom: 8.78px;
+}

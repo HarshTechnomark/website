@@ -1,21 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './App.css';
+import Login from './components/Login/Login';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Prayag
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      {/* <Navbar /> */}
+      <Login/>
+    </Fragment>
   );
 }
 
