@@ -1,3 +1,6 @@
+## The link for the figma file
+https://www.figma.com/file/aLo5Ei1Nb6KqMxbYOsH5X9/Novus-Banking-(Copy)?node-id=321-269&t=DpqQ6SI1ImypK6hz-0
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -5,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
-
+ 
 ### `npm start`
 
 Runs the app in the development mode.\
