@@ -1,0 +1,16 @@
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+.layout {
+    display: flex;
+    flex-direction: row;
+}
+
+.transaction {
+  width: 500px;
+  height: 510px;
+  display: flex;
+  padding: 10.86px 18px 8px 15px;
+}

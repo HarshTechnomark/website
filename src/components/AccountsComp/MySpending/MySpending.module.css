@@ -1,0 +1,26 @@
+.spending {
+  width: 445px;
+  height: 645px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.mainName {
+  color: #076f32;
+}
+
+.icon {
+  width: 47px;
+  height: 47px;
+  color: #076f32;
+  margin: 15.05px 10.14px 18.47px 14.68px;
+}
+
+.spendingData,
+.spendingData div {
+  width: 443px;
+  height: 500px;
+}

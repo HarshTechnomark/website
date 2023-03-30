@@ -1,0 +1,29 @@
+.headers {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  padding-bottom: 7%;
+
+  color: #737272;
+}
+.mainDiv {
+  height: 50%;
+  width: 40%;
+}
+.para {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #737272;
+}
+p{
+    padding-top: 2%;
+}
+.more{
+    color: #F30066;
+    text-align: right;
+}

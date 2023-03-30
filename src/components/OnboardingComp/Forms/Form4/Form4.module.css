@@ -1,0 +1,25 @@
+.logoCont {
+  display: flex;
+}
+.imgg {
+  width: 24px;
+  height: 24px;
+}
+p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #737272;
+}
+.selfieCont{
+    margin-bottom: 40px;
+}
+.btnCont{
+    margin-top: 100px;
+}
+.butt{
+    width: 80%;
+}

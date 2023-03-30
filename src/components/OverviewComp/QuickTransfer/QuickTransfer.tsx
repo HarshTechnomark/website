@@ -4,6 +4,7 @@ import Quick from "../../../assets/quicktransfer.png";
 import Arrow from "../../../assets/arrow.png";
 import Vector from "../../../assets/Vector.png";
 import Card from "../../../uiComponents/Card/Card";
+import Button from "../../../uiComponents/Button/Button";
 
 type Props = {};
 
@@ -49,7 +50,7 @@ const QuickTransfer = (props: Props) => {
         id="remarks"
         className={classes.remarks}
       />
-      <button className={classes.btn}>Make a Payment</button>
+      <Button className={classes.btn}>Make a Payment</Button>
       <span className={classes.fields}>
         Fields marked with * are mandatory.
       </span>

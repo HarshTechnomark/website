@@ -1,0 +1,33 @@
+.progress_bar {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    color: #b6b6b9;
+    font-weight: 900 !important;
+    font-size: 14px
+}
+.listCont{
+    width: 80%;
+    height: 200px;
+}
+.progress_bar li{
+    position: relative;
+}
+.progress_bar li::before {
+    position: absolute;
+    content: counter(progress);
+    height: 30px;
+    width: 30px;
+    color: #eee;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    left: 12px;
+    z-index: 2;
+    background-color: #fff;
+    transition:all 1s;
+}

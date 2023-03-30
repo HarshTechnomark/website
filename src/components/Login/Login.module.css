@@ -1,7 +1,8 @@
 .bg-div {
   display: flex;
   /* justify-content: center; */
-  height: 850px;
+  /* height: 850px; */
+  height: 100vh;
   width: 100%;
   border-radius: 0px;
   background-image: url("../../assets/loginbg.png");
@@ -10,15 +11,121 @@
   background-size: cover;
 }
 .form-container {
-  width: 420px;
+  align-self: center;
+  /* width: 420px; */
   height: 480px;
+  width: 35%;
   background: #f0f2ff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   /* align-items: center; */
   border-radius: 20px;
   margin-left: 30%;
-  margin-top: 10%;
+  /* margin-top: 10%; */
+}
+.sign-container {
+  display: flex;
+  height: 50px;
+  border-radius: 20px 20px 0 0;
+  border-top-left-radius: 5%;
+  justify-content: center;
 }
 .signin-container {
-  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: black;
+}
+.signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 20px 0 0;
+  color: white;
+  background: linear-gradient(270deg, #000000 5.08%, #076f32 104.24%);
+  /* border: 1px solid #076f32; */
+  width: 100%;
+}
+.sign-para {
+  margin-top: 7%;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+.signform-container {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+.inputs {
+  margin-left: 7%;
+}
+p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+
+  /* identical to box height */
+  margin-bottom: 13px;
+  color: #000000;
+}
+.input-tag {
+  width: 85%;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 21px;
+  height: 44px;
+  color: rgba(0, 0, 0, 0.3);
+  background: #f0f2ff;
+  border: 1px solid #a9b1bc;
+  border-radius: 10px;
+}
+.forgot {
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+margin-bottom: 42px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.compulsory {
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #f30066;
+  margin-bottom: -20px;
+}
+.btn{
+  width: 85%;
+  margin-top: 27px;
+  margin-left: 5%;
+  height: 47px;
+  margin-bottom: 29px;
+
+}
+span{
+  color: red;
+  font-size: 14px;
+}
+.errorss{
+  margin-top: 0;
+  display: block;
+}
+.sign-para:hover{
+  cursor: pointer  ;
 }

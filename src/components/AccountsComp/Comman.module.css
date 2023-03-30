@@ -1,0 +1,42 @@
+.main {
+  width: 202px;
+  height: 130px;
+  padding: 14px 15px 12px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.first {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.left > span:first-child {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.left > span:last-child {
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+
+.icon {
+  width: 33px;
+  height: 26px;
+  margin-left: 12px;
+}
+
+.main > p {
+  font-weight: 700;
+}

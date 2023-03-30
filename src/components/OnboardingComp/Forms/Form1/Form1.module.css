@@ -1,0 +1,86 @@
+
+.heading {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #076f32;
+}
+.para {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #737272;
+}
+p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+}
+.radio-ch {
+  display: flex;
+  /* justify-content: space-between; */
+  margin-left: 20px;
+}
+label {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #737272;
+  margin-right: 40px;
+  /* margin-left: 20px; */
+}
+.input-tag {
+  width: 85%;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 21px;
+  height: 44px;
+  color: rgba(0, 0, 0, 0.3);
+  background: #f0f2ff;
+  border: 1px solid #a9b1bc;
+  border-radius: 10px;
+}
+.compulsory {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #f30066;
+  /* margin-bottom: -20px; */
+}
+input[type=number]{
+  -moz-appearance: textfield;
+}
+.inputs{
+  margin-bottom: 20px;
+}
+
+.continue{
+  width: 35%;
+  height: 47px;
+  color: white;
+}
+input[type="radio"]:checked{
+  accent-color: #054820;
+}
+span{
+  color: red;
+  font-size: 14px;
+}
+.errorss{
+  margin-top: 0;
+  display: block;
+}

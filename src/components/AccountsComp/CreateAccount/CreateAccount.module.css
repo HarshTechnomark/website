@@ -1,0 +1,27 @@
+.createAccount {
+  width: 445px;
+  height: 233px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.first {
+  color: #076f32;
+  margin: 25px 200px 25px 23px;
+}
+
+.second {
+  color: gray;
+  font-size: 14px;
+  margin: 10px 23px 30px 23px;
+}
+
+.btn {
+  width: 200px;
+  padding: 10px 25px;
+  margin: 0px 23px 10px 23px;
+  font-size: 14px;
+}

@@ -56,48 +56,49 @@
   padding: 2% 4%;
 }
 
-.btn{
-    margin: 0 18px 18px 20px;
+.btn {
+  height: 40px;
+  margin: 0 18px 18px 20px;
 }
 
-.fields{
-    color: #f30066;
-    margin: 0px 50px 100px 23px;
-    font-size: 12px;
+.fields {
+  color: #f30066;
+  margin: 0px 50px 100px 23px;
+  font-size: 12px;
 }
 
-.recent{
-    display: flex;
-    flex-direction: row;
-    color: #076f32;
+.recent {
+  display: flex;
+  flex-direction: row;
+  color: #076f32;
 }
 
-.recent > .icon{
-    width: 47px;
-    height: 47px;
-    color: #076f32;
-    margin: 0 5px 32px 20px;
+.recent > .icon {
+  width: 47px;
+  height: 47px;
+  color: #076f32;
+  margin: 0 5px 32px 20px;
 }
 
-.recent > span{
-    color: #076f32;
-    margin: 15px 50px 39px 0;
+.recent > span {
+  color: #076f32;
+  margin: 15px 50px 39px 0;
 }
 
-.coresol{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.coresol {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.item{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 px 150px 5px;
-    font-size: 12px;
+.item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 px 150px 5px;
+  font-size: 12px;
 }
 
-.item > .icon{
-    margin-bottom: 8.78px;
+.item > .icon {
+  margin-bottom: 8.78px;
 }

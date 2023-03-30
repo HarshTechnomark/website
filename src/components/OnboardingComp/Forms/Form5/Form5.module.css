@@ -1,0 +1,33 @@
+.image {
+  width: 180px;
+}
+.imgCont {
+  margin-left: 30px;
+}
+.gradient {
+  background: linear-gradient(90deg, #000000 0%, #076f32 105.29%);
+  border-radius: 10px;
+  color: white;
+  width: 100%;
+}
+.backCont {
+  display: flex;
+  margin-bottom: 20px;
+
+}
+.back {
+  margin-right: 10px;
+  width: 100px;
+  background: #737272;
+  border-radius: 10px;
+  color: white;
+}
+.continue {
+  background: linear-gradient(90deg, #000000 0%, #076f32 105.29%);
+  border-radius: 10px;
+  color: white;
+  width: 100px;
+}
+.upCont{
+    margin-bottom: 20px;
+}

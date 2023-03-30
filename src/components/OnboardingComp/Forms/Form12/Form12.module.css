@@ -1,0 +1,21 @@
+.header {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+    margin-bottom: 40px;
+  color: #076f32;
+
+}
+.para{
+    margin-bottom: 40px;
+}
+.continue {
+    background: linear-gradient(90deg, #000000 0%, #076f32 105.29%);
+    border-radius: 10px;
+    color: white;
+    width: 350px;
+    height: 40px;
+    margin-top: 10%;
+  }

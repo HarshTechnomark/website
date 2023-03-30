@@ -1,0 +1,42 @@
+.mainAccount{
+    width: 445px;
+    height: 233px;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #878686;
+    font-size: 14px;
+    margin: 23px -30px 32px;
+}
+
+.middle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0px -10px 32px;
+}
+
+.left > span:first-child, .right {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.bottom{
+    margin: 10px 20px;
+}
+
+.btn{
+    font-size: 14px;
+    margin: 0 25px;
+    padding: 10px 25px;
+    cursor: pointer;
+}
