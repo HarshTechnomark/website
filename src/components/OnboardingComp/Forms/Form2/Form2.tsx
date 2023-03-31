@@ -25,7 +25,8 @@ const schema = yup
     //     name: yup.string().required("File required")
     // })
 
-    file : yup.string().required("File is required")
+    file : yup.string().required("File is required"),
+    
 
   })
   .required();
@@ -63,7 +64,7 @@ const Form2 = (props: Props) => {
         <div>
           {/* Contains  Input fields  Verification process choice */}
           <label htmlFor="Process">
-            Choose a verification process <span>*</span>
+            Choose a verification process <span className={classes.star}>*</span>
           </label>
           <br />
           <select
@@ -84,7 +85,7 @@ const Form2 = (props: Props) => {
         <div>
           {/*  */}
           <label htmlFor="otp">
-            Enter your OTP <span>*</span>
+            Enter your OTP <span className={classes.star}>*</span>
           </label>
           <br />
           <input
@@ -98,7 +99,7 @@ const Form2 = (props: Props) => {
         </div>
         <div>
           {/* Contains  Input fields  enter the otp vala field */}
-          <label htmlFor="verify">How would you like to verify</label>
+          <label htmlFor="verify">How would you like to verify</label><span className={classes.star}>*</span>
           <br />
           <select
             {...register("verifyDoc")}
@@ -118,10 +119,10 @@ const Form2 = (props: Props) => {
         <div>
           {/* Contains  Input fields  input document field*/}
           <label htmlFor="document">
-            Attach your identity documents <span>*</span>
+            Attach your identity documents <span className={classes.star}>*</span>
           </label>
           <br />
-          <input type="file" id="file" {...register("file")} />
+          <input required type="file" id="file" {...register("file")} />
           <span className={classes["errorss"]}>{errors.file?.message}</span>
         </div>
         <div>

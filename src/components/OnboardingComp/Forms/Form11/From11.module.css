@@ -39,3 +39,11 @@ label {
     display: flex;
     margin-bottom: 30px;
   }
+  .errorss{
+    color: red;
+    margin-top: 0;
+    display: block;
+  }
+  .star{
+    color: red;
+  }

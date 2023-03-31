@@ -24,8 +24,6 @@ import Form5 from "./components/OnboardingComp/Forms/Form5/Form5";
 import Form11 from "./components/OnboardingComp/Forms/Form11/Form11";
 import Form12 from "./components/OnboardingComp/Forms/Form12/Form12";
 import Onboarding from "./pages/Onboarding/Onboarding";
-// import Onboarding from "./pages/Onboarding/Onboarding";
-
 function App() {
   return (
     <Fragment>

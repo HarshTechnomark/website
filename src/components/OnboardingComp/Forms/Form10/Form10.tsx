@@ -14,10 +14,19 @@ const schema = yup
     fName: yup.string().required("please enter your name"),
     lName: yup.string().required("please enter your name"),
     gender: yup.string().required("please select one of the options"),
-
+    dob: yup.date().required(),
+    address1: yup.string().required(),
+    address2: yup.string(),
+    country: yup.string().required("please select one of the options"),
+    state: yup.string().required(),
+    city: yup.string().required(),
+    pin: yup
+      .string()
+      .matches(/^[0-9]{6}$/, " should be 6 digits ")
+      .required("Field can't be empty"),
   })
   .required();
-  type FormData = yup.InferType<typeof schema>;
+type FormData = yup.InferType<typeof schema>;
 
 const Form10 = (props: Props) => {
   const {
@@ -28,19 +37,18 @@ const Form10 = (props: Props) => {
     resolver: yupResolver(schema),
   });
 
+  const navigate = useNavigate();
 
-  const navigate =useNavigate();
+  const form10Handler = () => {
+    navigate("/onboarding/form11");
+  };
 
-  const form10Handler = () =>{
-    navigate('/onboarding/form11')
-  }
-
-  const backHandler =()=>{
-    navigate('/onboarding/form5')
-  }
+  const backHandler = () => {
+    navigate("/onboarding/form5");
+  };
 
   return (
-    <div>
+    <div className={classes["mainCont"]}>
       {/* Main container div */}
       <div>
         {/* Main header */}
@@ -48,13 +56,13 @@ const Form10 = (props: Props) => {
           Tell us about your basic details and account requirements
         </p>
       </div>
-      <form onSubmit={form10Handler}>
+      <form onSubmit={handleSubmit(form10Handler)}>
         <div>
           {/* form fields div */}
           <div>
             {/* title div */}
             <label htmlFor="Process">
-              Title * <span>*</span>
+              Title * <span className={classes.star}>*</span>
             </label>
             <br />
             <select
@@ -63,17 +71,21 @@ const Form10 = (props: Props) => {
               {...register("title")}
               className={classes["selecttt"]}
             >
-              <option value="Select" selected disabled> Select </option>
+              <option value="Select" selected disabled>
+                {" "}
+                Select{" "}
+              </option>
               <option value="Mr">Mr </option>
               <option value="Mrs">Mrs</option>
             </select>
+            <span className={classes["errorss"]}>{errors.title?.message}</span>
           </div>
           <div className={classes["rowCont"]}>
             {/* row 1  container*/}
             <div>
               {/*  */}
               <label htmlFor="fName">
-                First Name <span>*</span>
+                First Name <span className={classes.star}>*</span>
               </label>
               <br />
               <input
@@ -81,14 +93,17 @@ const Form10 = (props: Props) => {
                 type="text"
                 id="Fname"
                 placeholder="Enter First Name"
-                {...register('fName')}
+                {...register("fName")}
               />
-              {/* <span className={classes['errorss']}>{errors.otp?.message}</span> */}
+              <br />
+              <span className={classes["errorss"]}>
+                {errors.fName?.message}
+              </span>
             </div>
             <div>
               {/*  */}
               <label htmlFor="lName">
-                Last Name <span>*</span>
+                Last Name <span className={classes.star}>*</span>
               </label>
               <br />
               <input
@@ -98,14 +113,16 @@ const Form10 = (props: Props) => {
                 placeholder="Enter your Last Name"
                 {...register("lName")}
               />
-              <span className={classes['errorss']}>{errors.lName?.message}</span>
+              <br />
+              <span className={classes["errorss"]}>
+                {errors.lName?.message}
+              </span>
             </div>
           </div>
           <div className={classes["rowCont"]}>
-            {/* row 2 */}
             <div>
               <label htmlFor="gender">
-                Gender <span>*</span>
+                Gender <span className={classes.star}>*</span>
               </label>
               <br />
               <select
@@ -114,17 +131,22 @@ const Form10 = (props: Props) => {
                 {...register("gender")}
                 className={classes["selectt"]}
               >
-                <option value="select" selected disabled>Select </option>
+                {/* <option value="select" selected disabled>Select </option> */}
                 <option value="male">Male </option>
                 <option value="female">Female </option>
               </select>
+              <span className={classes["errorss"]}>
+                {errors.gender?.message}
+              </span>
             </div>
             <div>
-              <label htmlFor="Process">
-                Date of Birth <span>*</span>
+              <label htmlFor="DOB">
+                Date of Birth <span className={classes.star}>*</span>
               </label>
               <br />
-              <input type="date" name="DOB" id="DOB" />
+              <input type="date" name="DOB" id="DOB" min="2002-01-02" />
+              <br />
+              <span className={classes["errorss"]}>{errors.dob?.message}</span>
             </div>
           </div>
           <div className={classes["rowCont"]}>
@@ -132,7 +154,7 @@ const Form10 = (props: Props) => {
             <div>
               {/*  */}
               <label htmlFor="address1">
-                Address 1 <span>*</span>
+                Address 1 <span className={classes.star}>*</span>
               </label>
               <br />
               <input
@@ -140,48 +162,55 @@ const Form10 = (props: Props) => {
                 type="text"
                 id="address1"
                 placeholder="Enter Address 1"
-                // {...register("otp")}
+                {...register("address1")}
               />
-              {/* <span className={classes['errorss']}>{errors.otp?.message}</span> */}
+              <br />
+              <span className={classes["errorss"]}>
+                {errors.address1?.message}
+              </span>
             </div>
             <div>
               {/*  */}
-              <label htmlFor="address2">
-                Address 2 
-              </label>
+              <label htmlFor="address2">Address 2</label>
               <br />
               <input
                 className={classes["input-tag"]}
                 type="text"
                 id="address2"
                 placeholder="Enter Address 2"
-                // {...register("otp")}
+                {...register("address2")}
               />
-              {/* <span className={classes['errorss']}>{errors.otp?.message}</span> */}
+              <span className={classes["errorss"]}>
+                {errors.address2?.message}
+              </span>
             </div>
           </div>
           <div className={classes["rowCont"]}>
             {/* row 4 */}
             <div>
               <label htmlFor="Country">
-                Country <span>*</span>
+                Country <span className={classes.star}>*</span>
               </label>
               <br />
               <select
                 id="Country"
                 placeholder="Please select a option"
-                // {...register("verifyProcess")}
+                {...register("country")}
                 className={classes["selectt"]}
               >
                 <option value="ind">Indiasadfcsdfsd </option>
                 <option value="jap">Japan </option>
                 <option value="korea">Korea </option>
               </select>
+              <br />
+              <span className={classes["errorss"]}>
+                {errors.country?.message}
+              </span>
             </div>
-            <div >
+            <div>
               {/*  */}
               <label htmlFor="state">
-                State <span>*</span>
+                State <span className={classes.star}>*</span>
               </label>
               <br />
               <input
@@ -189,9 +218,12 @@ const Form10 = (props: Props) => {
                 type="text"
                 id="state"
                 placeholder="Enter State"
-                // {...register("otp")}
+                {...register("state")}
               />
-              {/* <span className={classes['errorss']}>{errors.otp?.message}</span> */}
+              <br />
+              <span className={classes["errorss"]}>
+                {errors.state?.message}
+              </span>
             </div>
           </div>
           <div className={classes["rowCont"]}>
@@ -199,7 +231,7 @@ const Form10 = (props: Props) => {
             <div>
               {/*  */}
               <label htmlFor="city">
-               City <span>*</span>
+                City <span className={classes.star}>*</span>
               </label>
               <br />
               <input
@@ -207,14 +239,15 @@ const Form10 = (props: Props) => {
                 type="text"
                 id="city"
                 placeholder="Enter your City"
-                // {...register("otp")}
+                {...register("city")}
               />
-              {/* <span className={classes['errorss']}>{errors.otp?.message}</span> */}
+              <br />
+              <span className={classes["errorss"]}>{errors.city?.message}</span>
             </div>
             <div>
               {/*  */}
               <label htmlFor="zip">
-                PIN/ZIP <span>*</span>
+                PIN/ZIP <span className={classes.star}>*</span>
               </label>
               <br />
               <input
@@ -222,14 +255,19 @@ const Form10 = (props: Props) => {
                 type="text"
                 id="zip"
                 placeholder="Enter PIN/ZIP"
-                // {...register("otp")}
+                {...register("pin")}
               />
-              {/* <span className={classes['errorss']}>{errors.otp?.message}</span> */}
+              <br />
+              <span className={classes["errorss"]}>{errors.pin?.message}</span>
             </div>
           </div>
           <div className={classes["btn-cont"]}>
             <div>
-              <button type="button" onClick={backHandler} className={classes["back"]}>
+              <button
+                type="button"
+                onClick={backHandler}
+                className={classes["back"]}
+              >
                 Back
               </button>
             </div>

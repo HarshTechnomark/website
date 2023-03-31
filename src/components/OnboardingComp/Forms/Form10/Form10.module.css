@@ -1,3 +1,6 @@
+/* .mainCont{
+  width: 500px;
+} */
 .para {
     font-family: "Roboto";
     font-style: normal;
@@ -47,7 +50,7 @@
     justify-content: space-between;
   }
   .input-tag {
-    width: 90%;
+    width: 80%;
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
@@ -87,9 +90,11 @@
     height: 40px;
     color: white;
   }
-  input[type="date"]::placeholder{
-
-}
-span{
+.star{
   color: red;
+}
+.errorss{
+  color: red;
+  margin-top: 0;
+  display: block;
 }

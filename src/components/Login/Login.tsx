@@ -22,9 +22,22 @@ const schema = yup
 type FormData = yup.InferType<typeof schema>;
 
 const Login = (props: Props) => {
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-    navigate("/navbar");
+  const submitHandler = async (data: FormData) => {
+      let response =  await fetch("https://dummyjson.com/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: data.username,
+        password: data.password,
+        // expiresInMins: 60, // optional
+      }),
+     
+    })
+      let resData = await response.json();
+      localStorage.setItem("token",resData.token);
+      if(response.status === 200){
+        navigate("/navbar");
+      }
     // navigate('/overview')
   };
   const navigate = useNavigate();
@@ -44,7 +57,7 @@ const Login = (props: Props) => {
     <div className={classes["bg-div"]}>
       <form
         className={classes["form-container"]}
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(submitHandler)}
       >
         <div className={classes["sign-container"]}>
           <div className={classes["signin-container"]}>
@@ -65,7 +78,7 @@ const Login = (props: Props) => {
         <div className={classes["signform-container"]}>
           <div className={classes["inputs"]}>
             <p>
-              Username <span> *</span>
+              Username <span className={classes.star}> *</span>
             </p>
             <input
               className={classes["input-tag"]}
@@ -79,7 +92,7 @@ const Login = (props: Props) => {
           </div>
           <div className={classes["inputs"]}>
             <p>
-              Password <span> *</span>
+              Password <span className={classes.star}> *</span>
             </p>
             <input
               className={classes["input-tag"]}

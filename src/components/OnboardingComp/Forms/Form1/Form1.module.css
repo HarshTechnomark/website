@@ -76,11 +76,12 @@ input[type=number]{
 input[type="radio"]:checked{
   accent-color: #054820;
 }
-span{
-  color: red;
-  font-size: 14px;
-}
+
 .errorss{
+  color: red;
   margin-top: 0;
   display: block;
+}
+.star{
+  color: red;
 }

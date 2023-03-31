@@ -8,7 +8,8 @@ import {
   NavLink,
   Outlet,
 } from "react-router-dom";
-import Logo from "../../assets/logo.svg";
+// import Logo from "../../assets/logo.svg";
+import Logo from "../../assets/logo-white 1.png"
 
 const Navbar = (props: any) => {
   return (

@@ -62,11 +62,11 @@ const Form1 = (props: Props) => {
       <form
         onSubmit={handleSubmit((data: FormData) => {
           navigate('/onboarding/form2')
-          // console.log(JSON.stringify(data));
+          console.log(data.email);
         })}
       >
         {/* Form container */}
-        <p>Whom would you like to open an account ? <span>*</span></p>
+        <p>Whom would you like to open an account ? <span className={classes.star}>*</span></p>
         <div className={classes["radio-ch"]}>
           {/* Radio group */}
           
@@ -82,14 +82,14 @@ const Form1 = (props: Props) => {
             <input type="radio"  id="Family" {...register("acctype")} value="Family"></input>
             <label htmlFor="Family">Family</label>
           </div>
-          <span>{errors.acctype?.message}</span>
+          <span className={classes["errorss"]}>{errors.acctype?.message}</span>
         </div>
         <div className={classes["signform-container"]}>
           {/* Main form container where we giv padding from the sign in container */}
           <div>
             {/* Username field and input component */}
             <p>
-              Mobile number <span> *</span>
+              Mobile number <span className={classes.star}> *</span>
             </p>
             <input
               className={classes["input-tag"]}
@@ -111,7 +111,7 @@ const Form1 = (props: Props) => {
           <div className={classes["inputs"]}>
             {/* Password  field and input component */}
             <p>
-              Your Email Address<span> *</span>
+              Your Email Address<span className={classes.star}> *</span>
             </p>
             <input
               className={classes["input-tag"]}
