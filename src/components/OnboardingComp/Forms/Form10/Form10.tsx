@@ -39,9 +39,31 @@ const Form10 = (props: Props) => {
 
   const navigate = useNavigate();
 
-  const form10Handler = () => {
-    navigate("/onboarding/form11");
-  };
+  const form10Handler = async (data: FormData) => {
+    let response =  await fetch("http://localhost:3434/creation", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      title: data.title,
+      firstName: data.fName,
+      lastName: data.lName,
+      gender: data.gender,
+      dateOfBirth: data.dob,
+      address1: data.address1,
+      address2: data.address2,
+      country: data.country,
+      state: data.state,
+      city: data.city,
+      pin: data.pin
+    }),
+  })
+    let resData = await response.json();
+    if(response.status === 200){
+      console.log(resData);
+      navigate("/onboarding/form11");
+    }
+  // navigate('/overview')
+};
 
   const backHandler = () => {
     navigate("/onboarding/form5");
@@ -144,7 +166,9 @@ const Form10 = (props: Props) => {
                 Date of Birth <span className={classes.star}>*</span>
               </label>
               <br />
-              <input type="date" name="DOB" id="DOB" min="2002-01-02" />
+              <input type="date"  id="DOB" min="2022-01-02"
+                {...register("dob")}
+              />
               <br />
               <span className={classes["errorss"]}>{errors.dob?.message}</span>
             </div>

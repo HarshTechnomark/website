@@ -8,6 +8,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 type Props = {};
 
 const schema = yup
@@ -23,20 +25,23 @@ type FormData = yup.InferType<typeof schema>;
 
 const Login = (props: Props) => {
   const submitHandler = async (data: FormData) => {
-      let response =  await fetch("https://dummyjson.com/auth/login", {
+      let response =  await fetch("http://localhost:3434/signin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        username: data.username,
+        userName: data.username,
         password: data.password,
         // expiresInMins: 60, // optional
       }),
-     
     })
       let resData = await response.json();
       localStorage.setItem("token",resData.token);
       if(response.status === 200){
+        toast.success(resData.message)
         navigate("/navbar");
+      }
+      else{
+        toast.error(resData.message)
       }
     // navigate('/overview')
   };
@@ -122,6 +127,7 @@ const Login = (props: Props) => {
         </div>
       </form>
       <div>{/* footer */}</div>
+      <ToastContainer/>
     </div>
   );
 };

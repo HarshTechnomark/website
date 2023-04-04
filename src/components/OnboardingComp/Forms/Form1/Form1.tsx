@@ -7,6 +7,7 @@ import * as yup from "yup";
 import { RadioGroup } from "@mui/material";
 import {  useNavigate } from "react-router-dom";
 import Form2 from "../Form2/Form2";
+import { ToastContainer, toast } from "react-toastify";
 
 
 
@@ -39,14 +40,38 @@ const Form1 = (props: Props) => {
     resolver: yupResolver(schema),
   });
   const navigate = useNavigate();
-  const Form1Handler = (data : FormData) =>{
-    console.log(data);
-  }
-  const radioOptions = [
-    { label: "Self", value: "Self" },
-    { label: "business", value: "business" },
-    { label: "Family", value: "Family" },
-  ];
+  // const Form1Handler = (data : FormData) =>{
+  //   console.log(data);
+  // }
+
+  const Form1Handler = async (data: FormData) => {
+    let response =  await fetch("http://localhost:3434/identification", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      accountType: data.acctype,
+      contactNumber: data.mobileNumber,
+      emailId :data.email,
+      // expiresInMins: 60, // optional
+    }),
+   
+  })
+    let resData = await response.json();
+    if(response.status === 200){
+      navigate("/onboarding/form2");
+      console.log(resData);
+    }
+    else{
+      toast.error(resData.message)
+    }
+  // navigate('/overview')
+};
+
+  // const radioOptions = [
+  //   { label: "Self", value: "Self" },
+  //   { label: "business", value: "business" },
+  //   { label: "Family", value: "Family" },
+  // ];
 
 
   return (
@@ -60,10 +85,7 @@ const Form1 = (props: Props) => {
         </p>
       </div>
       <form
-        onSubmit={handleSubmit((data: FormData) => {
-          navigate('/onboarding/form2')
-          console.log(data.email);
-        })}
+        onSubmit={handleSubmit(Form1Handler)}
       >
         {/* Form container */}
         <p>Whom would you like to open an account ? <span className={classes.star}>*</span></p>
@@ -96,6 +118,7 @@ const Form1 = (props: Props) => {
               type="number"
               placeholder="Enter your number"
               {...register("mobileNumber")}
+              // value={`${"ksd"}`}
             />
             <span className={classes["errorss"]}>
               {errors.mobileNumber?.message}
@@ -132,8 +155,16 @@ const Form1 = (props: Props) => {
           <Button className={classes["continue"]} >Continue</Button>
         </div>
       </form>
+      <ToastContainer/>
     </div>
   );
 };
 
 export default Form1;
+
+
+// {
+//   "accountType":"self",
+//   "contactNumber":"1234563800",
+//   "emailId":"abcd@gmail.com"
+// }

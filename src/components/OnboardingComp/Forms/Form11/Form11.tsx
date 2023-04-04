@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
 type Props = {};
 
 const schema = yup
@@ -16,6 +17,8 @@ const schema = yup
       .string()
       .required()
       .oneOf([yup.ref("password")], "Passwords must match"),
+      wpConf : yup.boolean(),
+      emailConf : yup.boolean()
   })
   .required();
 type FormData = yup.InferType<typeof schema>;
@@ -33,9 +36,29 @@ const Form11 = (props: Props) => {
   const backHandler = () => {
     navigate("/onboarding/form10");
   };
-  const form11Handler = () => {
-    navigate("/onboarding/form12");
-  };
+  const form11Handler = async (data: FormData) => {
+    let response =  await fetch("http://localhost:3434/success", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      userId : data.username,
+      password : data.password,
+      confirmPassword: data.Confpassword,
+      wpAlert : data.wpConf,
+      emailAlert : data.emailConf
+      // expiresInMins: 60, // optional
+    }),
+   
+  })
+    let resData = await response.json();
+    if(response.status === 200){
+      navigate("/onboarding/form12");
+      console.log(resData);
+    }else{
+      toast.error("Username is already in use ")
+    }
+  // navigate('/overview')
+};
 
   return (
     <div>
@@ -96,7 +119,7 @@ const Form11 = (props: Props) => {
                 {errors.Confpassword?.message}
               </span>
               <br />
-              <input type="checkbox" name="whatsapp" id="whatsapp" />
+              <input type="checkbox" id="whatsapp" {...register("wpConf")}/>
               <label htmlFor="whatsapp">
                 I agree to enable whatsApp alerts.{" "}
                 <span>
@@ -105,7 +128,7 @@ const Form11 = (props: Props) => {
                 </span>{" "}
               </label>
               <br />
-              <input type="checkbox" name="promotions" id="promotions" />
+              <input type="checkbox"  id="promotions" {...register("emailConf")}/>
               <label htmlFor="promotions">
                 I agree to enable promotion emails from Novus Bank and partners.
               </label>
@@ -134,6 +157,7 @@ const Form11 = (props: Props) => {
           </form>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };
