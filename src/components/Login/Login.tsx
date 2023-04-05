@@ -36,6 +36,10 @@ const Login = (props: Props) => {
     })
       let resData = await response.json();
       localStorage.setItem("token",resData.token);
+      localStorage.setItem("user",resData.user);
+
+      const userData =localStorage.getItem("user");
+
       if(response.status === 200){
         toast.success(resData.message)
         navigate("/navbar");

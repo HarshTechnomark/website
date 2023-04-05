@@ -44,6 +44,8 @@ const Form1 = (props: Props) => {
   //   console.log(data);
   // }
 
+  const userData = localStorage.getItem("user")
+ console.log(userData);
   const Form1Handler = async (data: FormData) => {
     let response =  await fetch("http://localhost:3434/identification", {
     method: "POST",
