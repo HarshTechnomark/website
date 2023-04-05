@@ -3,6 +3,7 @@
 }
 .imgCont {
   margin-left: 30px;
+  /* border: #000000 solid 2px; */
 }
 .gradient {
   background: linear-gradient(90deg, #000000 0%, #076f32 105.29%);

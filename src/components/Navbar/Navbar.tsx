@@ -7,11 +7,21 @@ import {
   Route,
   NavLink,
   Outlet,
+  useNavigate,
 } from "react-router-dom";
 // import Logo from "../../assets/logo.svg";
 import Logo from "../../assets/logo-white 1.png"
 
 const Navbar = (props: any) => {
+
+  const navigate = useNavigate();
+
+  const logOutHandler = () =>{
+    localStorage.clear();
+    navigate('/');
+  }
+
+
   return (
     <div className={classes.mainContent}>
       <nav className={classes.nav}>
@@ -24,7 +34,7 @@ const Navbar = (props: any) => {
           />
           <div className={classes.username}>
             <h4>Naveen</h4>
-            <h6>Logout</h6>
+            <div className={classes['logout']} onClick={logOutHandler}>Logout</div>
           </div>
           <Bell className={classes.icon} />
         </div>

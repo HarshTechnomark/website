@@ -2,51 +2,24 @@ import React, { useState } from "react";
 import classes from "./Form2.module.css";
 import Button from "../../../../uiComponents/Button/Button";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 
 type Props = {};
-
-// Yup.object().shape({
-//   file: Yup.object().shape({
-//     name: Yup.string().required()
-// }).required('File required')
-
-// const schema = yup
-//   .object({
-//     otp: yup
-//       .string()
-//       .matches(/^[0-9]{6}$/, "OTP should be 6 digits ")
-//       .required("Field can't be empty"),
-//     verifyProcess: yup.string().required("please select one of the options"),
-//     verifyDoc: yup.string().required("please select one of the options"),
-//     //   file : yup.object().shape({
-//     //     name: yup.string().required("File required")
-//     // })
-
-//     file : yup.string(),
-
-//   })
-//   .required();
-// type FormData = yup.InferType<typeof schema>;
 
 const Form2 = (props: Props) => {
   const [otp, setOtp] = useState("");
   const [verDoc, setVerDoc] = useState("");
   const [verProc, setVerProc] = useState("");
-  const [file, setFile] = useState("");
   const [otpErr, setOtpErr] = useState("");
+  const [imageUrl, setImageUrl] = useState<any>('');
   const [verDocErr, setVerDocErr] = useState("");
   const [verProcErr, setVerProcErr] = useState("");
   const [fileErr, setFileErr] = useState("");
 
   const {
-    register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({
-    // resolver: yupResolver(schema),
   });
   const navigate = useNavigate();
 
@@ -82,18 +55,22 @@ const Form2 = (props: Props) => {
     }
   }
   const fileHandler = (e: any) => {
-    if(e.target.value === ""){
-      setFileErr("Please select a file")
+    if(e.target.files === ""){
+      return(
+
+        setFileErr("Please select a file")
+      )
     }else{
       setFileErr("")
-      setFile(e.target.value);
+      const file1 = e.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file1);
+      reader.onloadend = () => {
+        setImageUrl(reader.result);
+      };
     }
   }
-  let form2Data = {
-    otpEntered : otp ,
-    imageData1 : file
-  }
-  console.log(otp, verDoc, verProc ,file);
+  console.log(otp, verDoc, verProc ,imageUrl);
   const Form2Handler = async (e : any) => {
     if(otp === ""){
       setOtpErr("otp can't be empty field")
@@ -104,7 +81,7 @@ const Form2 = (props: Props) => {
     if(verProc === ""){
       setVerProcErr("Please select the process type")
     }
-    if(file == null){
+    if(imageUrl == null){
       setFileErr("Please select a file")
     }
     else{
@@ -112,7 +89,8 @@ const Form2 = (props: Props) => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            form2Data
+            otpEntered : otp,
+            imageData1 : imageUrl
         }),
       });
       let resData = await response.json();

@@ -85,3 +85,6 @@
   color: #054820;
   text-decoration: none;
 }
+.logout:hover{
+  cursor: pointer;
+}

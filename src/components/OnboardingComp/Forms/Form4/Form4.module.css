@@ -15,11 +15,31 @@ p {
   color: #737272;
 }
 .selfieCont{
-    margin-bottom: 40px;
+    margin-bottom: 5%;
 }
 .btnCont{
-    margin-top: 100px;
+    margin-top: 10%;
 }
 .butt{
     width: 80%;
+}
+.back {
+  height: auto;
+  width: 100px;
+  height: 30px;
+  background: #737272;
+  border-radius: 10px;
+  color: white;
+  margin-right: 20px;
+}
+.continue {
+  width: 100px;
+  height: 30px;
+  color: white;
+}
+.btn-cont {
+  margin-top: 30px;
+  display: flex;
+  margin-bottom: 30px;
+  width: 100%;
 }

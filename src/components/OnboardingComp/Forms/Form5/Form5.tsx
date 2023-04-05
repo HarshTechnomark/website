@@ -10,11 +10,13 @@ type Props = {};
 const Form5 = (props: Props) => {
 const navigate = useNavigate();
   const backHandler =()=>{
+    localStorage.removeItem('selfie');
     navigate("/onboarding/form4")
   }
   const contHandler =()=>{
     navigate("/onboarding/form10")
   }
+  const selfie : any= localStorage.getItem('selfie');
   return (
     <div>
       {/* Main form container */}
@@ -32,14 +34,11 @@ const navigate = useNavigate();
           <button className={classes['gradient']}>Upload</button>
         </div>
         <div className={classes['upCont']}>
-        <button className={classes['gradient']}>Retake Selfie</button>
+        <button  onClick={backHandler} className={classes['gradient']}>Retake Selfie</button>
         </div>
       </div>
       <div className={classes['backCont']}>
         {/* back and continue */}
-        <div>
-          <button className={classes['back']} onClick={backHandler}>Back</button>
-        </div>
         <div>
           <button className={classes['continue']}  onClick={contHandler}>Continue</button>
         </div>
