@@ -14,7 +14,7 @@ const schema = yup
     fName: yup.string().required("please enter your name"),
     lName: yup.string().required("please enter your name"),
     gender: yup.string().required("please select one of the options"),
-    dob: yup.date().required(),
+    dob: yup.date().required("please enter a date"),
     address1: yup.string().required(),
     address2: yup.string(),
     country: yup.string().required("please select one of the options"),

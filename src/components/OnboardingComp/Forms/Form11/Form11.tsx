@@ -92,7 +92,7 @@ const Form11 = (props: Props) => {
               <br />
               <input
                 className={classes["input-tag"]}
-                type="text"
+                type="password"
                 id="password"
                 placeholder="Enter Password"
                 {...register("password")}
@@ -109,7 +109,7 @@ const Form11 = (props: Props) => {
               <br />
               <input
                 className={classes["input-tag"]}
-                type="text"
+                type="password"
                 id="conPassword"
                 placeholder="Confirm Password"
                 {...register("Confpassword")}

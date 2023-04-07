@@ -106,7 +106,7 @@ const Login = (props: Props) => {
             </p>
             <input
               className={classes["input-tag"]}
-              type="text"
+              type="password"
               placeholder="Enter Password"
               {...register("password")}
             />
